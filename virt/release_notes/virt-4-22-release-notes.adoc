@@ -85,6 +85,26 @@ The `HotplugVolume` feature gate, which allows you to add storage without restar
 
 link:https://issues.redhat.com/browse/CNV-73301[CNV-73301]
 
+// CNV-71499: Deprecation notice for recording rules that were renamed to adhere to Prometheus naming conventions
+Prometheus recording rules renamed to adhere to naming conventions::
+
+Several Prometheus recording rules have been renamed to follow the Prometheus best practice naming convention of `<level>:<metric>:<operations>`. The old recording rule names are deprecated and will be removed in a future release. If you use these recording rules in custom queries or dashboards, update them to use the new names.
++
+The following recording rules that are referenced in the documentation have been renamed:
++
+[cols="1,1"]
+|===
+|Old name |New name
+
+|`kubevirt_vmsnapshot_disks_restored_from_source`
+|`vm:kubevirt_vmsnapshot_disks_restored:sum`
+
+|`kubevirt_vmsnapshot_disks_restored_from_source_bytes`
+|`vm:kubevirt_vmsnapshot_restored_bytes:sum`
+|===
+
+link:https://issues.redhat.com/browse/CNV-71499[CNV-71499]
+
 [id="virt-4-22-removed_{context}"]
 == Removed features
 
